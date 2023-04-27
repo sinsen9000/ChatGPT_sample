@@ -47,12 +47,7 @@ while True:
     for i, _ in enumerate(sig_dic):
         task_text = re.sub(sig_dic[i][0],sig_dic[i][1], task_text)
     output_text, messages = completion(input_text, task_text, past_text)
-    outputList = []
-    for i in list(output_text):
-        outputList.append(i)
-        if i in Termination_sig[:5]:
-            break
-    result = "".join(outputList)
+    result = outputList
     print(result)
     if len(past_text) == 5: del past_text[0]
     past_text.append([input_text,result])
