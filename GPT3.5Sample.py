@@ -42,7 +42,7 @@ while True:
     emotion_text = "User dislikes you and You like user." #ユーザ・システムの感情状態
     task1 = "Pretend to be a girl named あかり and respond frankly to user (ぐでたま). Refer to the following samples.\n" #タスクの例示。ユーザ・システム名を明示
     sample_text = "\n".join(random.sample(md,10)) #サンプルテキストファイルから10個重複なしで選出
-    task2 = emotion_text+" Answer the question with words that answer the question. The following are conversational texts." #感情情報と禁則事項への対応
+    task2 = emotion_text+" Answer the question with words that answer the question. The following are conversational texts." #禁則事項への対応
     task_text = task1+sample_text+task2
     for i, _ in enumerate(sig_dic):
         task_text = re.sub(sig_dic[i][0],sig_dic[i][1], task_text)
